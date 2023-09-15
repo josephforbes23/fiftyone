@@ -1,5 +1,4 @@
 import { Locator, Page, expect } from "src/oss/fixtures";
-import { SidebarPom } from "../sidebar";
 
 const enabledParentPaths = ["uniqueness", "predictions", "ground_truth"];
 const disabledParentPaths = ["filepath", "id", "metadata", "tags"];
@@ -44,7 +43,7 @@ export class FieldVisibilityPom {
   constructor(page: Page) {
     this.page = page;
 
-    this.asserter = new FieldVisibilityAsserter(this, new SidebarPom(page));
+    this.asserter = new FieldVisibilityAsserter(this);
 
     this.sidebarLocator = page.getByTestId("sidebar");
     this.containerLocator = page.getByTestId("field-visibility-container");
